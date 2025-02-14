@@ -34,7 +34,7 @@ function Home() {
       } catch (err) {
         setError(err.message);
       } finally {
-        setLoading(true);
+        setLoading(false);
       }
     };
 
@@ -46,8 +46,8 @@ function Home() {
 
   if (loading) {
     return (
-      <div className=" w-[70%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {Array.from({ length: 10}).map((_, index) => (
+      <div className=" w-[70%] mt-[5%] grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {Array.from({ length: 12}).map((_, index) => (
           <VideoSkeleton key={index} />
         ))}
       </div>
@@ -69,7 +69,8 @@ function Home() {
         }
 
         const data = await response.json(); 
-        setVideos(data.list); 
+        setVideos(data.list);
+        
 
       } catch (err) {
         setError(err.message);

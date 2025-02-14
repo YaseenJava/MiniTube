@@ -1,5 +1,7 @@
 import React from "react";
 import { FaHome, FaList, FaInfoCircle, FaCog } from "react-icons/fa";
+import { CgFilm } from "react-icons/cg";
+
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
@@ -29,6 +31,11 @@ const Sidebar = () => {
           <FaCog /> <span>Settings</span>
         </li>
         </Link>
+        <Link to="/upload">
+        <li className="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-700 rounded-lg">
+        <CgFilm /><span>Upload</span>
+        </li>
+         </Link>
       </ul>
     </div>
   );

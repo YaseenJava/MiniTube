@@ -7,6 +7,7 @@ import Sidebar from './assets/components/Sidebar';
 import Home from './assets/components/Home';
 import VideoCard from './assets/components/VideoCard'
 import Login from './assets/components/Login';
+import VideoUpload from './assets/components/VideoUpload';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
                 <Route path="/menu" element={<h1>Error Page</h1>}></Route>
                 <Route path="/video/*" element={<VideoCard/>}></Route>
                 <Route path="/login" element={<Login/>}></Route>
-                <Route path="/login" element={<h1 className='align-middle'>helloo</h1>}></Route>
+               <Route path="/search/*" element={<Home/>}></Route>
+               <Route path="/upload" element={<VideoUpload/>}></Route>
 
 
             </Routes>

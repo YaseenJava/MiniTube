@@ -1,16 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+
+
 const Cards=({ video }) => {
-    const {thumbnail,title,channel ,id}=video;
-   console.log(video)
-
-
-
+   const {thumbnail,title,id}=video;
+   var imgUrl=video.thumbnail_480_url;
+   //const channel=video.owner.username;
+  if(!imgUrl)
+   {
+      imgUrl=video.thumbnail_url;
+   }
   return (
     <div className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg border-amber-600">
       <Link  to={`/video/${encodeURIComponent(video.id)}`} key={video.id}>
        <img
-        src={video.thumbnail_480_url}
+        src={imgUrl}
         alt={video.thumbnail_url}
         className="w-full transition-transform duration-300 transform group-hover:scale-80"
       /> 
@@ -29,7 +34,7 @@ const Cards=({ video }) => {
        
       </div>
      <h6 className="text-clip font-serif">{video.title.length>20 ? video.title.substring(0,20)+ "..." : video.title}</h6>
-     <p className="text-sm font-serif">{video.channel}</p>
+     <p className="text-sm font-serif">{}</p>
      </Link>
     </div>
   );

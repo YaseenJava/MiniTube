@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 
 function Header(){
   
-    const [search, setSearch]=useState("")
+    const [search, setSearch]=useState()
   return (
     <nav className="fixed top-0 left-0 w-full flex items-center justify-between p-3 shadow-md bg-gray-900 z-[9999]">
 
       {/* Logo */}
       <div className="flex items-center gap-2 ">
-        <img  src="https://t3.ftcdn.net/jpg/04/42/73/48/360_F_442734884_HeQkk5BGbayZVFB98qippHJlR60CfpdW.jpg" alt="Logo" className="h-10 w-12" />
+        <img  src="https://static.vecteezy.com/system/resources/previews/002/768/246/non_2x/vn-logo-letter-initial-logo-designs-template-free-vector.jpg" alt="Logo" className="h-10 w-12" />
       </div>
       
       {/* Search Bar */}
