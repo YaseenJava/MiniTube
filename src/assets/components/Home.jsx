@@ -13,8 +13,9 @@ function Home() {
 
 
 
-  const search=location.pathname.split("/search/%22")[1];
-  console.log(search)
+const search=location.pathname.split("/search/%22")[1];
+  // const searched =search.replace(" ","%")
+  //console.log(searched)
  // console.log(`https://api.dailymotion.com/videos?search=${search}&fields=id,title,thumbnail_url&limit=20`)
 
   useEffect(() => {
@@ -56,6 +57,7 @@ function Home() {
 
   if(search){
     const search=location.pathname.split("/search/%22")[1];
+    search.replace(" ","%");
     console.log(search)
 
     const fetchingsearch = async () => {
