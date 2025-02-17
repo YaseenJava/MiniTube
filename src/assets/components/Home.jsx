@@ -13,9 +13,9 @@ function Home() {
 
 
 
-const search=location.pathname.split("/search/%22")[1];
+  const search = decodeURIComponent(location.pathname.split("/search/")[1] || "");
   // const searched =search.replace(" ","%")
-  //console.log(searched)
+  console.log(search)
  // console.log(`https://api.dailymotion.com/videos?search=${search}&fields=id,title,thumbnail_url&limit=20`)
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const search=location.pathname.split("/search/%22")[1];
 }
 
   if(search){
-    const search=location.pathname.split("/search/%22")[1];
+  
     search.replace(" ","%");
     console.log(search)
 
@@ -98,9 +98,9 @@ const search=location.pathname.split("/search/%22")[1];
 
   if (error) {
    // return <h2 className="text-red-500 text-center font-bold text-7xl align-middle mt-10">Error: {error}</h2>;
-    return <div className="h-20 bg-black w-screen justify-center mt-20 ">
-      <img src=" " alt="oops "/>
-      <h1 className="text-white text-center font-bold text-3xl align-middle mt-">Error:{error}</h1>
+    return <div className="h-20 ml-[50px] bg-black w-screen justify-center mt-20 ">
+      <img className="ml-[105px] lg:ml-[40%]" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwtIJk3Elzx2VOUYIZliWdxtC939G9ztfSuA&s" alt="oops "/>
+      <h1 className="text-white text-center font-bold text-3xl align-middle mt-">Oops:{error}</h1>
     </div>
   }
 

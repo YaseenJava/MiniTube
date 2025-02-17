@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className="h-[90%] w-60 mt-[66px]  bg-gray-900 text-white p-4 fixed left-0 top-0 max-w-min">
+    <div className="h-[90%] w-60 mt-[66px]  bg-gray-900 text-white p-4 fixed left-0 top-0 max-w-min ">
      
      
       <h2 className="text-xl font-bold mb-6">Menu</h2>

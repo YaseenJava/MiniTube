@@ -1,32 +1,55 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e) => {
+  const handleLogin = async(e) => {
     e.preventDefault();
     console.log("Logging in:", username, password);
-    // fetch("http:localhost:8080/login",{
-    //   method:POST,
-    //   headers:{
-    //     contentType:application.json
-    //   },
-    //   body:{
-    //     username:username,
-    //     password:password
-    //   }
-    //})
-  };
+    const form =new FormData()
+    form.append("name" ,username)
+    form.append("password" ,password)
+    try{
+      const response=await fetch("http://localhost:8080/formlogin",{
+        method:"POST",
+        body:form
+      })
+      if(!response.ok){
+        throw new Error("something went wrong!")
+      }
+    }
+      catch(err){
+     console.log("error",err.message)
+      }
+    
+  }
+  
 
   const handleGoogleLogin = async() => {
     alert("Logging in with Google...");
     window.location.href = "http://localhost:8080/loginOauth";
 
-  };
+
+  //    try{
+  //   const res=await axios.post("http://localhost:8080/loginOauth", { token: response.credential })
+  //   if(!respone.ok){
+  //     throw new Error("user is not Authentic")
+  //   }
+  //   localStorage.setItem("token", res.data.token);
+  //   setUsername(res.data.user);
+    
+  // }
+  // catch(err){
+  //   console.log(" something went wrong ",err.message);
+  // }
+
+  }
+  
 
   return (
-    <div className="fixed left-[35%] top-[30%] flex justify-center items-center h-[40%] border-green-50 ">
+    <div className=" w-[300px] lg:w-[450px] fixed left-[35%] top-[30%] flex justify-center items-center h-[40%] border-green-50">
       <div className="bg-gray-900 p-6 rounded-lg shadow-lg w-96 text-white">
         <h2 className="text-2xl font-semibold text-center mb-4">Login</h2>
         <form onSubmit={handleLogin} className="space-y-4">
@@ -48,7 +71,7 @@ function Login() {
           />
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 font-bold"
+            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 font-bold" onClick={handleLogin}
           >
             Login
           </button>
@@ -71,6 +94,6 @@ function Login() {
       </div>
     
   );
-}
+};
 
 export default Login;

@@ -1,44 +1,3 @@
-// import React from "react";
-// import { useParams } from "react-router-dom";
-// import { useLocation } from "react-router-dom";
-// import { Fa } from "react-icons/fa";
-
-
-// function VideoCard() {
-// // const { videoId } = useParams();
-
-//  const location = useLocation();
-//  const videoId = location.pathname.split("/video/")[1];
-
-
-//   // console.log("videoiD:",videoId);
-//   // console.log("url-",'https://www.dailymotion.com/video/${videoId}')
-//   // console.log(`Final URL: https://www.dailymotion.com/embed/video/${videoId}`);
-//   // console.log(`https://geo.dailymotion.com/player.html?video=${videoId}`)
-
-
-//   return (
-//     <div className="absolute left-[10%] top-[10%] flex justify-center items-center h-[360px] w-[640px] border-amber-50 bg-gray-100 rounded-2xl">
-      
-     
-      
-
-    
-      
-//       <iframe
-//         width="640"
-//         height="360"
-//         className="rounded-2xl shadow-lg "
-//         //src={`https://www.dailymotion.com/embed/video/${videoId}`}
-//         src={`https://geo.dailymotion.com/player.html?video=${videoId}`}
-//         title="DailyMotion Video"
-//         allowFullScreen
-        
-//       ></iframe>
-
-//     </div>
-//   );
-// }
 
 import { useLocation, useNavigate } from "react-router-dom";
 //import Draggable from "react-draggable";
@@ -64,7 +23,7 @@ function VideoCard() {
 
   return (
    // <Draggable bounds="parent" handle=".drag-handle">
-      <div className="fixed left-[10%] top-[10%] flex flex-col items-center p-3 bg-black shadow-lg rounded-2xl w-[640px] h-[400px]">
+      <div className="fixed left-[29%] top-[12%] flex flex-col items-center p-3 bg-black shadow-lg rounded-2xl w-[340px] h-[210px] lg:w-[600px] lg:h-[340px] lg:left-[11%] lg:top-[10%] ">
         {/* Header with drag handle and close button */}
         <div className="drag-handle w-full flex justify-between items-center p-2 bg-black rounded-t-2xl cursor-move"> 
           <button onClick={() => setVisible(false)} className="text-red-500 hover:text-red-700 ">
@@ -74,9 +33,9 @@ function VideoCard() {
 
         {/* Video Player */}
         <iframe
-          width="600"
-          height="340"
-          className="rounded-lg shadow-lg"
+          width=""
+          height=""
+          className="rounded-lg shadow-lg w-[340px] h-[210px] lg:w-[600px] lg:h-[340px]"
           src={videoUrl}
           title="DailyMotion Video"
           allowFullScreen
