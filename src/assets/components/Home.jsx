@@ -84,7 +84,7 @@ function Home() {
 
  // console.log(videos);
   return (
-    <div className="mt-6 ml-32 w-3xl h-full pt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 ">
+    <div className="lg:mt-6 lg:ml-32 lg:w-3xl h-full pt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 ">
       {videos.length > 0 ? (
         videos.map((video) => <Cards key={video.id} video={video} loading={loading} />)
       ) : (
