@@ -10,6 +10,10 @@ import VideoCard from './assets/components/VideoCard'
 import Login from './assets/components/Login';
 import VideoUpload from './assets/components/VideoUpload';
 import PrivateRoute from './assets/components/PrivateRoute';
+import Register from './assets/components/Register';
+import Account from './assets/components/Account';
+
+
 
 function App() {
 
@@ -35,6 +39,8 @@ function App() {
               <Route path="/video/*" element={<VideoCard />} />
               <Route path="/search/*" element={<Home />} />
               <Route path="/upload" element={<VideoUpload />} />
+               <Route path="/register" element={<Register/>} />
+               <Route path="/account" element={<Account/>} />
               {/* </Route> */}
 
 

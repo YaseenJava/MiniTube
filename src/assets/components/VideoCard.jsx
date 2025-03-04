@@ -23,7 +23,7 @@ function VideoCard() {
 
   return (
    // <Draggable bounds="parent" handle=".drag-handle">
-      <div className="fixed left-[29%] top-[12%] flex flex-col items-center p-3 bg-black shadow-lg rounded-2xl w-[340px] h-[210px] lg:w-[600px] lg:h-[340px] lg:left-[11%] lg:top-[10%] ">
+      <div className="fixed m-3 top-[65%] flex flex-col items-center p-3 bg-black shadow-lg rounded-2xl w-[280px] h-[200px]  lg:w-[600px] lg:h-[340px] lg:left-[10%] lg:top-[10%] ">
         {/* Header with drag handle and close button */}
         <div className="drag-handle w-full flex justify-between items-center p-2 bg-black rounded-t-2xl cursor-move"> 
           <button onClick={() => setVisible(false)} className="text-red-500 hover:text-red-700 ">
@@ -35,7 +35,7 @@ function VideoCard() {
         <iframe
           width=""
           height=""
-          className="rounded-lg shadow-lg w-[340px] h-[210px] lg:w-[600px] lg:h-[340px]"
+          className="rounded-lg shadow-lg w-[280px] h-[200px] lg:w-[600px] lg:h-[340px]"
           src={videoUrl}
           title="DailyMotion Video"
           allowFullScreen

@@ -9,27 +9,42 @@ function Login() {
     e.preventDefault();
     console.log("Logging in:", username, password);
     const form =new FormData()
-    form.append("name" ,username)
+    form.append("username" ,username)
     form.append("password" ,password)
-    try{
-      const response=await fetch("http://localhost:8080/formlogin",{
-        method:"POST",
-        body:form
-      })
-      if(!response.ok){
-        throw new Error("something went wrong!")
-      }
-    }
-      catch(err){
-     console.log("error",err.message)
-      }
+  //   try{
+  //     const response=await fetch("http://localhost:8080//minitube/formlogin",{
+  //       method:"POST",
+  //       body:form
+  //     })
+  //     if(!response.ok){
+  //       throw new Error("something went wrong!")
+        
+  //     }
+  //     const token=response.json
+  //   }
+  //     catch(err){
+  //    console.log("error",err.message)
+  //     }
+
+
+try {
+  const response = await axios.post("http://localhost:8080/auth/minitube/formlogin", form
+  );
+
+  const token=response.data.toke;
+  console.log(token);
+
+} catch (err) {
+  console.log("error", err.message);
+}
+
     
-  }
+   }
   
 
   const handleGoogleLogin = async() => {
     alert("Logging in with Google...");
-    window.location.href = "http://localhost:8080/loginOauth";
+    window.location.href = "http://localhost:8080/auth/loginOauth";
 
 
   //    try{
@@ -49,7 +64,7 @@ function Login() {
   
 
   return (
-    <div className=" w-[300px] lg:w-[450px] fixed left-[35%] top-[30%] flex justify-center items-center h-[40%] border-green-50">
+    <div className=" w-[250px] lg:w-[450px] fixed left-[20px] lg:left-[35%] top-[30%] flex justify-center items-center h-[40%] border-green-50">
       <div className="bg-gray-900 p-6 rounded-lg shadow-lg w-96 text-white">
         <h2 className="text-2xl font-semibold text-center mb-4">Login</h2>
         <form onSubmit={handleLogin} className="space-y-4">

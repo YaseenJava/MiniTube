@@ -22,7 +22,7 @@ function Home() {
     const fetchVideos = async () => {
       try {
           const response = await fetch(
-          "https://api.dailymotion.com/videos?limit=40&fields=id,title,thumbnail_480_url,owner.username");
+          "https://api.dailymotion.com/videos?limit=40&fields=id,title,thumbnail_480_url,owner.username,duration");
            console.log("home")
       
         if (!response.ok) {
@@ -105,7 +105,7 @@ function Home() {
   }
 
   return (
-    <div className="mt-6 ml-32 w-3xl h-full pt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 ">
+    <div className="lg:mt-6 lg:ml-32 lg:w-3xl h-full pt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 ">
       {videos.length > 0 ? (
         videos.map((video) => <Cards key={video.id} video={video} loading={loading} />)
       ) : (

@@ -28,7 +28,7 @@ export default function VideoUpload() {
     formData.append("category", category);
 
     try {
-      const response = await fetch("http://localhost:8080/videoUpload", {
+      const response = await fetch("http://localhost:8080/video/videoUpload", {
         method: "POST",
         body: formData,
       });

@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 
 const Cards=({ video }) => {
-   const {thumbnail,title,id}=video;
+   const {thumbnail,title,id,duration}=video;
    var imgUrl=video.thumbnail_480_url;
-   //const channel=video.owner.username;
-  if(!imgUrl)
+   console.log(video.duration)
+   if(!imgUrl)
    {
       imgUrl=video.thumbnail_url;
    }
@@ -19,7 +19,7 @@ const Cards=({ video }) => {
         alt={video.thumbnail_url}
         className="w-full transition-transform duration-300 transform group-hover:scale-80"
       /> 
-
+      <span className="mt-[] items-end z-[999]">{video.duration}</span>
     
 
       
