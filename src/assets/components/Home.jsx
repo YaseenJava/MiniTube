@@ -65,12 +65,13 @@ function Home() {
           const response = await fetch
           (`https://api.dailymotion.com/videos?search=${search}&fields=id,title,thumbnail_url&limit=20`);
            
-      
+  
         if (!response.ok) {
           throw new Error("Failed to load videos");
         }
 
         const data = await response.json(); 
+    
         setVideos(data.list);
         
 
@@ -82,10 +83,11 @@ function Home() {
     };
   fetchingsearch();
 
- // console.log(videos);
+ // console.log(videos.duration);
+  //console.log((videos.duration/60));
   return (
     <div className="lg:mt-6 lg:ml-32 lg:w-3xl h-full pt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 ">
-      {videos.length > 0 ? (
+      {videos.length > 0? (
         videos.map((video) => <Cards key={video.id} video={video} loading={loading} />)
       ) : (
       <p className="text-center text-gray-500">No videos found.</p>

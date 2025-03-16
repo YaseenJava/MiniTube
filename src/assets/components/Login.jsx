@@ -31,7 +31,7 @@ try {
   const response = await axios.post("http://localhost:8080/auth/minitube/formlogin", form
   );
 
-  const token=response.data.toke;
+  const token=response.data.token;
   console.log(token);
 
 } catch (err) {
