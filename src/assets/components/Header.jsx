@@ -41,7 +41,7 @@ function Header() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full flex items-center justify-between p-3 shadow-md bg-gray-900 z-[9999] h-[50px] lg:h-[80px] ">
+    <nav className="fixed top-0 left-0 w-full flex items-center justify-between p-3 shadow-md bg-gray-900  z-[9999] h-[50px] lg:h-[80px] ">
 
 
       <div className="flex items-center gap-2">

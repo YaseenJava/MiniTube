@@ -16,7 +16,7 @@ function Home() {
   const search = decodeURIComponent(location.pathname.split("/search/")[1] || "");
   // const searched =search.replace(" ","%")
   console.log(search)
- // console.log(`https://api.dailymotion.com/videos?search=${search}&fields=id,title,thumbnail_url&limit=20`)
+ console.log(`https://api.dailymotion.com/videos?search=${search}&fields=id,title,thumbnail_url&limit=20`)
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -71,7 +71,7 @@ function Home() {
         }
 
         const data = await response.json(); 
-    
+        //console.log(data.list)
         setVideos(data.list);
         
 
