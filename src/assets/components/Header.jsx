@@ -45,7 +45,7 @@ function Header() {
 
 
       <div className="flex items-center gap-2">
-        <img src="https://static.vecteezy.com/system/resources/previews/002/768/246/non_2x/vn-logo-letter-initial-logo-designs-template-free-vector.jpg" alt="Logo" className="lg:h-10 lg:w-12 h-0 rounded-full" />
+       <img src="https://static.vecteezy.com/system/resources/previews/002/768/246/non_2x/vn-logo-letter-initial-logo-designs-template-free-vector.jpg" alt="Logo" className="lg:h-10 lg:w-12 h-0 rounded-full" />
       </div>
 
 
